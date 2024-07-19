@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Call Back Hell</title>
+  </head>
+  <body></body>
+  <script>
+    function anchorTages(value, callback) {
+      let a = document.createElement("a");
+      //    let img=document.createElement('img')
+      a.href = value.Link;
+      a.innerText = value.Text;
+      a.onload = function () {
+        console.log("This link is working");
+        callback(null, value);
+      };
+      a.onerror = function () {
+        console.log("this link is not working");
+        callback(new Error(" 404  "));
+      };
+      callback();
+      document.body.appendChild(a);
+    //   document.body.appendChild(hr)
+      //    document.a.appendChild(img)
+    }
+
+    // function Works(error,value){
+    //     if(error){
+    //         console.log("Recheck the link it is not write");
+    //         return
+    //     }
+    //     anchorTages(value={Link:"https://www.instagram.com/",Text:"Instagram"},Works)
+    // }
+    anchorTages(
+      (value = { Link: "https://www.google.com/", Text: "Google\n" }),
+      function Works(error, value) {
+        if (error) {
+          console.log("Recheck the link it is not write");
+          return;
+        }
+        anchorTages(
+          (value = { Link: "https://www.instagram.com/", Text: "Instagram\n" }),
+          function Works(error, value) {
+            if (error) {
+              console.log("Recheck the link it is not write");
+              return;
+            }
+            anchorTages(
+              (value = {
+                Link: "https://www.youtube.com/",
+                Text: "youtube\n",
+              }),
+              function Works(error, value) {
+                if (error) {
+                  console.log("Recheck the link it is not write");
+                  return;
+                }
+                anchorTages(
+                  (value = {
+                    Link: "https://www.github.com/",
+                    Text: "github\n",
+                  }),
+                  function Works(error, value) {
+                    if (error) {
+                      console.log("Recheck the link it is not write");
+                      return;
+                    }
+                    anchorTages(
+                      (value = {
+                        Link: "https://www.netflix.com/",
+                        Text: "netflix\n",
+                      }),
+                      function Works(error, value) {
+                        if (error) {
+                          console.log("Recheck the link it is not write");
+                          return;
+                        }
+                      }
+                    );
+                  }
+                );
+              }
+            );
+          }
+        );
+      }
+    );
+  </script>
+</html>

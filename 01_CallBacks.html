@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call_Backs</title>
+</head>
+<body>
+</body>
+<script>
+    function creatTag(ImgUrl,callback){
+    let Tag=document.createElement('img')
+    Tag.src=ImgUrl
+    Tag.alt=`Virat Kohli`
+    Tag.onload=function (){
+        console.log(`this is Virat Kholi Image`);
+        callback(null,ImgUrl) //* What happend when i simply write Callback
+    }
+    Tag.onerror=function(){
+        console.log(` This is a error for img`);
+        callback(new Error("Cannot show image")) //* What happend when i simply write Callback
+    }
+    
+    document.body.appendChild(Tag)
+    }
+
+
+    function working(error,tagName){
+        if(error){
+            console.log("there is an error");
+            console.log(error);
+            return
+        }
+        console.log('This Function is Working')
+        alert('fine')
+    }
+
+    creatTag("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.QOqTcI5zp2L5GAZDpgf4ogHaFK%26pid%3DApi&f=1&ipt=ac9385d4e7ddc38cd43ea050f4595b0fac3be3147d14a5782f3ba90afbd197d2&ipo=images",working)        // hear not working and working
+
+
+</script>
+</html>
