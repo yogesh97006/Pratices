@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // call Backs
+
+    /*****
+
+    function LoadScript1(src,callback){
+      let script = document.createElement("script")
+      script.src=src
+      script.onload=function(){
+         document.write("script is working fine\n" + src);
+         callback(null,src)   // if we don't pass the null hear then even
+                             // if link is write we will see the error from if statement from one arugments error block is excuting 
+      }
+      script.onerror = function(){
+         document.write("script has failed\n")
+         callback(new Error("The Script Has Some Errors"))
+      }
+    document.body.appendChild(script)
+    }
+
+    function MoreFun(error,val){
+        if(error){
+            console.log(error+" Please Check The Script");
+            return
+        }
+        setTimeout(()=>{
+            alert("\nWork is Finised "+ " =>  "+ val);
+        },4000)
+        // alert("\nWork is Finised "+ val);
+    }
+
+
+    LoadScript1("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js",MoreFun)      
+    
+    ****/
+
+    //           2) call back Hell
+
+    // const LoadScript2 = (source, cb) => {
+    //   const Script = document.createElement("script");
+    //   Script.src = source;
+    //   Script.onload = () => {
+    //     console.log(`${source} This Script is Running Now`);
+    //     cb(null, source);
+    //   };
+    //   Script.onerror = () => {
+    //     // console.log(new Error (" These Script Has Some Errors"));
+    //     cb(new Error(" These Script Has Some Errors"), source);
+    //   };
+    //   //cb()  //  how these comes to the top
+    //   document.body.appendChild(Script);
+    // };
+
+    // const AnotherFun = (error,value) =>{
+    //     if(error){
+    //         console.log("These Script is Throwing Some Error  " + value);
+    //         console.log(error+" " + value);
+    //         return
+    //     }
+    //     console.log(`These Functions are running 1`);
+    // }
+
+    // LoadScript2("https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js",AnotherFun)
+
+    // LoadScript2(
+    //   "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js",
+    //   (AnotherFun = (error, value) => {
+    //     if (error) {
+    //       console.log("These Script is Throwing Some Error  " + value);
+    //       console.log(error + " " + value);
+    //       return;
+    //     }
+    //     console.log(`These Functions are running 1`);
+    //     LoadScript2(
+    //       "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js",
+    //       (AnotherFun = (error, value) => {
+    //         if (error) {
+    //           console.log("These Script is Throwing Some Error  " + value);
+    //           console.log(error + " " + value);
+    //           return;
+    //         }
+    //         console.log(`These Functions are running 2`);
+    //         LoadScript2(
+    //           "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js",
+    //           (AnotherFun = (error, value) => {
+    //             if (error) {
+    //               console.log("These Script is Throwing Some Error  " + value);
+    //               console.log(error + " " + value);
+    //               return;
+    //             }
+    //             console.log(`These Functions are running 3`);
+    //             LoadScript2(
+    //               "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js",
+    //               (AnotherFun = (error, value) => {
+    //                 if (error) {
+    //                   console.log(
+    //                     "These Script is Throwing Some Error  " + value
+    //                   );
+    //                   console.log(error + " " + value);
+    //                   return;
+    //                 }
+    //                 console.log(`These Functions are running 4`);
+    //                 LoadScript2(
+    //                   "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js",
+    //                   (AnotherFun = (error, value) => {
+    //                     if (error) {
+    //                       console.log(
+    //                         "These Script is Throwing Some Error  " + value
+    //                       );
+    //                       console.log(error + " " + value);
+    //                       return;
+    //                     }
+    //                     console.log(`These Functions are running 5`);
+    //                     LoadScript2(
+    //                       "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js",
+    //                       (AnotherFun = (error, value) => {
+    //                         if (error) {
+    //                           console.log(
+    //                             "These Script is Throwing Some Error  " + value
+    //                           );
+    //                           console.log(error + " " + value);
+    //                           return;
+    //                         }
+    //                         console.log(`These Functions are running 6`);
+    //                         LoadScript2(
+    //                           "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js",
+    //                           (AnotherFun = (error, value) => {
+    //                             if (error) {
+    //                               console.log(
+    //                                 "These Script is Throwing Some Error  " +
+    //                                   value
+    //                               );
+    //                               console.log(error + " " + value);
+    //                               return;
+    //                             }
+    //                             console.log(`These Functions are running 7`);
+    //                             LoadScript2(
+    //                               "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js",
+    //                               (AnotherFun = (error, value) => {
+    //                                 if (error) {
+    //                                   console.log(
+    //                                     "These Script is Throwing Some Error  " +
+    //                                       value
+    //                                   );
+    //                                   console.log(error + " " + value);
+    //                                   return;
+    //                                 }
+    //                                 console.log(
+    //                                   `These Functions are running 8`
+    //                                 );
+    //                                 console.log(
+    //                                   " <----------- These Is Called CallBack Hell or PyramidOfDoom ------------>"
+    //                                 );
+    //                               })
+    //                             );
+    //                           })
+    //                         );
+    //                       })
+    //                     );
+    //                   })
+    //                 );
+    //               })
+    //             );
+    //           })
+    //         );
+    //       })
+    //     );
+    //   })
+    // )
+
+    //             3)  Promises
+
+    /*
+
+  let promise = new Promise((reslove,reject)=>{
+       console.log(" these is a Promise 1 ");
+       reslove(" these Promise is resloved")
+  })
+
+  console.log(" These is a stmt for checking 1");
+  
+  setTimeout(()=>{
+      console.log(" These is a stmt for checking 2");
+  },5000)
+
+  console.log(" These is a stmt for checking 3");
+
+  console.log(promise);
+
+
+  let promise1 = new Promise((reslove,reject)=>{
+    setTimeout(()=>{
+       console.log(" These Promise is Been Resolved ");
+       reslove(100)
+    },5000)
+  })
+
+  console.log(promise1);
+  
+  
+  promise1.then((value)=>{
+      console.log(value);
+    })
+    
+    console.log(promise1);
+
+  let promise2 = new Promise((reslove,reject)=>{
+    console.log(" Your promise ie been resloved ")
+  setTimeout(()=>{reslove(true) },5000)
+  })
+
+  let promise3 = new Promise((reslove,reject)=>{
+    console.log(" Your Promise is been rejected ");
+  setTimeout(()=>{reject(false) },5000) 
+  })
+
+  promise2.then((value)=>{
+    console.log(value);
+  })
+  
+  promise3.then((value)=>{
+    console.log(value);
+  }).catch((error)=>{
+    console.log(error+" it got somthing error ");
+  })
+  
+  promise3.then((value)=>{
+    console.log(value);
+  },(error)=>{
+    console.log(error);
+  })
+
+
+
+  let PromiseValue = prompt(" reslove or reject The Promise")
+//   console.log(PromiseValue, typeof PromiseValue);
+     let promise4 = new Promise((reslove,reject)=>{
+          if(PromiseValue == "reslove"){
+            reslove(" Your Promise Is Been Resloved 🥳 ")
+          }else if(PromiseValue == "reject")
+          {
+            reject(" Your Promise Is Been Rejected  😞 ")
+          }else{
+            document.write(" Your Promise Is neither been resloved nor rejected 😥 ")
+          }
+     }) 
+     
+     promise4.then((Val)=>{
+        document.write(Val)
+     }).catch((err)=>{
+        document.write(err)
+     })
+
+
+     */
+
+    //                          4)           promise chaining
+
+    const LoadScript = (source) => {
+      return (promise1 = new Promise((reslove, reject) => {
+        const script = document.createElement("script");
+        script.src = source;
+        document.body.appendChild(script);
+        script.onload = function () {
+          reslove(
+            "Let see ..............................................................."
+          );
+        };
+        script.onerror = function () {
+          reject();
+        };
+      }));
+    };
+
+    LoadScript(
+      "https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    )
+      .then((value) => {
+        console.log(value);
+        return (promise2 = new Promise((reslove, reject) => {
+          reslove("working");
+        }));
+      })
+      .then((value) => {
+        console.log(value);
+        return (promise3 = new Promise((reslove, reject) => {
+          reslove("its from 2nd Promise Value");
+        })
+          .then((val) => {
+            console.log(val);
+          })
+          .catch((err) => {
+            console.log(" There is a problem");
+          }));
+      });
+  </script>
+</html>
