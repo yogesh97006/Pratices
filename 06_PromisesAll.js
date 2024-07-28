@@ -40,6 +40,6 @@ let promise_3 = new Promise((reslove,reject)=>{
 // let promise_All = Promise.any([promise_1,promise_2,promise_3])
 // let promise_All = Promise.resolve(10000)
 // let promise_All = Promise.reject(new Error (" sorry we have error"))
-promise_All.then((val)=>{
-    console.log(val);
-})
+// promise_All.then((val)=>{
+//     console.log(val);
+// })
