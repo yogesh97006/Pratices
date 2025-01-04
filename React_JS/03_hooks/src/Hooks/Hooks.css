@@ -1,0 +1,27 @@
+.count{
+    font-size: 2rem;
+    margin: 0 auto;
+}
+
+.count > div > button:nth-child(1){
+    background-color: rgb(48, 210, 33);
+    color: black;
+    font-weight: 400;
+    margin: 10px;
+    
+}
+
+.count > div > button:nth-child(2){
+    background-color: rgb(34, 40, 202);
+    color: black;
+    font-weight: 400;
+    margin: 10px;
+}
+
+
+.count > div > button:nth-child(3){
+    background-color: red;
+    color: black;
+    font-weight: 400;
+    margin: 10px;
+}
