@@ -1,0 +1,34 @@
+/*? What is CSS ==> Cascading Style Sheet  */
+/*
+
+!   There Are Three Types oF Style 
+
+?   Inline Style which is written inside the openinmg tag of elment  like 
+* e.x :-   <hi style="color:blue" > hii </h1> it will make color blue of a text 
+
+?  Internal Style which is written inside a style tag inside a head element like 
+* e.x:-   <style>h1{color:blue}</style>
+
+?  External Css Which is written inside a external css file where we add a link tage and rel='stylesheet' href='nameoffile" 
+* e.x:-   <link rel='stylesheet' href='style.css' /> 
+
+*/
+
+
+h1{
+    color: hsl(271, 76%, 53%,0.5);
+}
+
+p{
+    color: rgba(212, 41, 78,0.8);
+}
+
+body{
+    background-color: rgb(56, 56, 56,0.3);
+    background-image: url("https://cdn.britannica.com/48/252748-050-C514EFDB/Virat-Kohli-India-celebrates-50th-century-Cricket-November-15-2023.jpg");
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    /* background-size: 100% auto; */
+    /* background-size: contain; */
+    background-position: bottom;
+}

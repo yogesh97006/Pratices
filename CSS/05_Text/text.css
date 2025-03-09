@@ -1,0 +1,11 @@
+p{
+    text-align: center;
+    /* text-decoration:; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /* text-wrap: nowrap; */
+    text-transform: uppercase;
+    text-transform: lowercase;
+    text-indent:99vw;
+    /* letter-spacing: 0.1rem; */
+    word-spacing: 5px;
+}

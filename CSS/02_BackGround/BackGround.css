@@ -1,0 +1,25 @@
+*{
+    /* background-color: aqua;
+     */
+     /* background-image: url();
+     background-repeat: no-repeat;
+     background-size: 100% auto;
+     background-attachment: scroll;
+     background-position: bottom right; */
+     
+    /* background-image: ; */
+    margin: 0;
+    padding: 0;
+    /* opacity: 0.7; */
+
+}
+
+body{
+    background: rgb(0, 0, 0) url('https://docs.insomnia.rest/assets/images/insomnia-docs-logo.png') no-repeat fixed bottom left;
+}
+h1{
+    /* background-color: rgba(255, 255, 255,0.1); */
+    /* background-color: rgba(255, 255, 255); */
+    color: #fff;
+    /* opacity: 1; */
+}

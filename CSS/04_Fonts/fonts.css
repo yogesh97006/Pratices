@@ -1,0 +1,38 @@
+*{
+    background-color: black;
+    color: #fff;
+}
+
+
+h1{
+    /* font-family: sans-serif;
+    font-style: italic;
+    font-size: 48px; */
+    font: 16px "Helvetica", sans-serif;
+}
+
+p{
+    /* font-family:Verdana, Geneva, Tahoma, sans-serif;
+    color: aqua;
+    font-style: oblique;
+    font-size: 2.5rem;
+    font-weight: 400;
+    font-variant: small-caps; */
+    font: normal normal bold 2rem sans-serif;
+}
+
+div{
+    font-family: cursive;
+    font-size: 2.5em;
+    font-variant: small-caps;
+}
+
+span{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-style: normal;
+    font-size: 1rem;
+    font-variant: normal;
+    font-weight: 400;
+
+    
+}

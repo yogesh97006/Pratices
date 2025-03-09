@@ -1,0 +1,19 @@
+div{
+    color: white;
+    background-color: black;
+}
+
+div h1{
+    color: aqua;
+}
+
+/* div div>p{
+    color: burlywood;
+} */
+
+/* div div p+span{ 
+    color: aqua;
+} */
+/* div div span~p{
+    color: aqua;
+} */

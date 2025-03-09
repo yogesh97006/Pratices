@@ -1,0 +1,22 @@
+*{
+    background-color: black;
+}
+
+h1,span,p,a{
+    background-color:burlywood;
+    font-weight: 400;
+    padding: 5px;
+    margin: 50px auto;
+    border: 5px solid aqua;
+    box-shadow: 5px 5px 10px 2px #fff;
+}
+
+span,a{
+    /* margin: 50px 500px; */
+    width: 10vw;
+    height: 10vh;
+    /* font-size: xx-large; */
+    display: inline-block;
+    /* padding: 50px; */
+}
+
